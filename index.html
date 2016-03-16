@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+  <head>
+    <link rel="stylesheet" href="/style/style.css">
+    <link rel="stylesheet" href="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/css/bootstrap.css">
+  </head>
+  <body>
+    <div class="container">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="input-group" ng-controller="searchController">
+              <span class="input-group-btn">
+                <button class="btn btn-default" type="button" ng-click="search()">Go!</button>
+              </span>
+              <input type="text" class="form-control" placeholder="Search for..." ng-model="term"/>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-8">
+            <div class="embed-responsive embed-responsive-4by3" ng-controller="playerController">
+              <iframe class="embed-responsive-item" ng-src={{url}}></iframe>
+            </div>
+          </div>
+          <div class=".col-md-4">
+            <ul class="media-list" ng-controller="listController">
+              <li class="media" ng-repeat="video in videos" ng-click="selectedVideo(video)">
+                <div class="media-left">
+                  <a href="#">
+                    <img class="media-object" ng-src={{video.snippet.thumbnails.default.url}} alt="{{video.snippet.title}}" />
+                  </a>
+                </div>
+                <div class="media-body">
+                  <h4 class="media-heading">{{video.snippet.title}}</h4>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="/bundle.js"></script>
+</html>
