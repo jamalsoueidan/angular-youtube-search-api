@@ -1,5 +1,3 @@
-import YTSearch from 'youtube-api-search';
-
 const API_KEY = "AIzaSyDXQ1H2iW0GC1wlN5X_U55Lhv2VX3QSjc4";
 const ROOT_URL = 'https://www.googleapis.com/youtube/v3/search';
 
